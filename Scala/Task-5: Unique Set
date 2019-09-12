@@ -1,0 +1,23 @@
+import scala.collection.immutable._
+object UniqueSet {
+  def main(args: Array[String]): Unit = {
+    var myset = Set("*********")
+    var i:Int = 0
+    var j:Int = 0
+    var temp:String = ""
+    println("Enter the Amount of Input: ")
+    i = scala.io.StdIn.readInt()
+    while (j<i){
+      println("Enter Your String:")
+      temp = scala.io.StdIn.readLine()
+      myset += temp
+      println(myset.size-1)
+      j+=1
+    }
+    println("\nSet 2:")
+    for(i<-myset)
+    {
+      println(i)
+    }
+  }
+}
