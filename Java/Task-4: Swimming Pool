@@ -1,0 +1,27 @@
+import java.awt.*;
+import java.util.Scanner;
+
+interface operation{
+    float vol(float a,float b,float c);
+}
+public class Swimming {
+    public static void main(String[] args) {
+
+        // Declaration Part
+        Float clean,vol,gallonWater,flowRate,charge;
+        float a,b,c;
+        Scanner scan = new Scanner(System.in);
+        clean = 75.f;
+
+        // Taking Input from User
+        System.out.println("Enter the Length Width and Height of your pool");
+        a = scan.nextInt();
+        b = scan.nextInt();
+        c = scan.nextInt();
+
+        // Calculate all
+        operation cal = (x,y,z) -> ((((x*y*z) * 7.5f)/50)/60)*8;
+        System.out.println("You need to paid:");
+        System.out.println(cal.vol(a, b, c)+clean);
+    }
+}
