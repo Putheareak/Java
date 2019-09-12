@@ -1,0 +1,19 @@
+import java.util.*;
+public class UniqueSet {
+    public static void main(String[] args) {
+        Set<String> hashSet = new HashSet<String>();
+        int i,j;
+        String temp;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the amount of Element you want to Input");
+        i = scan.nextInt();
+        scan.nextLine();
+        for (j=1;j<i+1;j++){
+            System.out.println("Enter Your String:");
+            temp = scan.nextLine();
+            hashSet.add(temp);
+            System.out.println(hashSet.size());
+        }
+        System.out.println(hashSet);
+    }
+}
