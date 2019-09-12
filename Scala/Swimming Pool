@@ -1,0 +1,22 @@
+object Swimming {
+  def main(args: Array[String]): Unit = {
+  
+    var clean:Float = 75
+    var a:Float = 0
+    var b:Float = 0
+    var c:Float = 0
+    
+    println("Enter Your Pool Length Width and Height:")
+    a = scala.io.StdIn.readInt()
+    b = scala.io.StdIn.readInt()
+    c = scala.io.StdIn.readInt()
+
+    // Using Lamda expression to calculate
+    var cal = (x:Float,y:Float,z:Float) => ((((x*y*z) * 7.5f)/50)/60)*8
+    
+    // Displaying the result
+    println("Cleaning: 75$")
+    println("Filling Up: "+cal(a,b,c)+"$")
+    println("Payment of Your Service: "+(cal(a,b,c)+clean))
+  }
+}
