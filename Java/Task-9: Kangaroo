@@ -1,0 +1,36 @@
+import java.util.*;
+public class task7 {
+    public static void main (String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter location of Kangoroo1: ");
+        int x1 = scan.nextInt();
+        System.out.print("Enter move rate of Kangoroo1: ");
+        int v1 = scan.nextInt();
+        System.out.print("Enter location of Kangoroo2: ");
+        int x2 = scan.nextInt();
+        System.out.print("Enter move rate of Kangoroo2: ");
+        int v2 = scan.nextInt();
+
+        if (x2<x1){
+            System.out.println("NO");
+        }
+
+        if (v1==0 || v2==0){
+            System.out.println("NO");
+        }
+
+        for (int i=0; i<10000; i++){
+            x1+=v1;
+            x2+=v2;
+            if (x1==x2){
+                System.out.println("YES");
+                break;
+            }
+            else{
+                System.out.println("NO");
+                break;
+            }
+        }
+
+    }
+}
