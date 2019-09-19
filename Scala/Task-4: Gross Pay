@@ -1,0 +1,30 @@
+object task4 {
+  def main (args:Array[String]): Unit ={
+    print("Enter your hourly pay rate: ")
+    var hrp = scala.io.StdIn.readInt()
+    print("Enter your hours worked: ")
+    var hrw = scala.io.StdIn.readInt()
+    var gp = hrp*hrw
+    println(f"Gross Pay: $gp")
+    var wht = 0
+    var np = 0
+    if (gp>500){
+      wht += (gp*20)/100
+      println(f"Withholding Tax: $wht")
+    }
+    else if(gp<500){
+      wht += (gp*15)/100
+      println(f"Withholding Tax: $wht")
+    }
+    else if(gp<400){
+      wht += (gp*12)/100
+      println(f"Withholding Tax: $wht")
+    }
+    else if(gp<300){
+      wht += (gp*10)/100
+      println(f"Withholding Tax: $wht")
+    }
+    np += gp-wht
+    println(f"Net Pay: $np")
+  }
+}
