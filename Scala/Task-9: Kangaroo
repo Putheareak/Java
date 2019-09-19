@@ -1,0 +1,30 @@
+import scala.util.control.Breaks._
+object task7 {
+  def main (args:Array[String]): Unit ={
+    print("Enter location of Kangoroo1: ")
+    var x1 = scala.io.StdIn.readInt()
+    print("Enter moves rate of Kangoroo1: ")
+    var v1 = scala.io.StdIn.readInt()
+    print("Enter location of Kangoroo2: ")
+    var x2 = scala.io.StdIn.readInt()
+    print("Enter moves rate of Kangoroo2: ")
+    var v2 = scala.io.StdIn.readInt()
+
+    if (x1>10000||x2>10000){
+      print("NO")
+    }
+    breakable{
+      for(i <- 0 until 10000){
+        x1+=v1
+        x2+=v2
+        if(x1==x2){
+          println("YES")
+          break
+        }
+      }
+      if (x1!=x2){
+        println("NO")
+      }
+    }
+  }
+}
