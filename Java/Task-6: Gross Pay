@@ -1,0 +1,31 @@
+import java.util.*;
+public class task4 {
+    public static void main (String[] args){
+        System.out.print("Enter your hourly pay rate: ");
+        Scanner scan = new Scanner(System.in);
+        int hpr = scan.nextInt();
+        System.out.print("Enter your hours work: ");
+        int hrw = scan.nextInt();
+
+        int gp = hpr*hrw;
+        int wh = 0;
+        if (gp>500){
+            wh += 20;
+        }
+        else if(gp<300){
+            wh += 10;
+        }
+        else if(gp<400){
+            wh += 12;
+        }
+        else if(gp<500){
+            wh += 15;
+        }
+        int perc = (gp*wh)/100;
+        int np = gp-perc;
+
+        System.out.println("Your Gross Pay: "+gp);
+        System.out.println("Your Withholding Tax: "+wh);
+        System.out.println("Your Net Pay: "+np);
+    }
+}
