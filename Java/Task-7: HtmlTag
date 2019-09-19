@@ -1,0 +1,42 @@
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Arrays;
+
+public class HtmlTag {
+    public static void main(String[] args) {
+
+        ArrayList myList = new ArrayList();
+        int arrIn,j;
+        String line;
+        boolean matchFound = false;
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter The Amount of Line you would like to Input:");
+        arrIn = scan.nextInt();
+        scan.nextLine();
+        if (arrIn >= 100){
+            System.out.println("Input Overloading");
+        }
+        else {
+            for (j=0;j<arrIn;j++){
+                System.out.println("Enter your Html tag:");
+                line = scan.nextLine();
+                Pattern r = Pattern.compile("<(.+)>([^<]+)</\\1>");
+                Matcher m = r.matcher(line);
+                if (m.find()) {
+                    System.out.println(m.group(2));
+                    matchFound = true;
+                    myList.add(m.group(2));
+                }
+                else{
+                    System.out.println("None");
+                    myList.add("None");
+                }
+            }
+            System.out.println(myList);
+        }
+    }
+}
