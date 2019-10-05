@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class studentFee {
+    public static void main(String arsg[]){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("Enter your enrolled hours :");
+        int hour=scanner.nextInt();
+        System.out.println("Enter your book's spent:");
+        int Bspent=scanner.nextInt();
+        int total = (hour*85)+Bspent+65;
+        System.out.println("Total student fee: "+total);
+
+    }
+}
